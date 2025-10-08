@@ -1,3 +1,10 @@
+# Fördelar med linked list över arraylist:
+# Bättre tidskomplexitet för insättning och borttagning av element, O(1) kontra O(n).
+# Dynamisk storlek, minnet används mer effektivt beroende på antalet element.
+# Nackdelar med linked list över arraylist:
+# sämre tidskomplexitet för att hitta element, eftersom den måste ta sig "fram" genom listan.
+# Mer minnesanvändning på grund av lagring av pekare.
+
 class Node:
     def __init__(self, data) -> None:
         self.data = data
@@ -34,6 +41,14 @@ class LinkedList():
             prev.next = current.next
             if current == self.last: # key is in the last node
                 self.last = prev
+    
+    def find(self, key) -> bool:
+        current = self.head
+        while current:
+            if current.data == key:
+                return True
+            current = current.next
+        return False
     
     def length(self) -> int:
         count = 0

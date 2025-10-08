@@ -7,6 +7,9 @@ class DequeIterator:
     def __init__(self, first) -> None:
         self.current = first
     
+    def __iter__(self):
+        return self
+    
     def __next__(self):
         if self.current is None:
             raise StopIteration
@@ -44,8 +47,7 @@ class Deque:
     
     def removeFirst(self) -> None:
         if self.isEmpty():
-            print ("Error: deque is empty")
-            return
+            raise IndexError("deque is empty")
         if self.first == self.last:
             removed = self.first
             self.first = None
@@ -61,8 +63,7 @@ class Deque:
     
     def removeLast(self) -> None:
         if self.isEmpty():
-            print ("Error: deque is empty")
-            return
+            raise IndexError("deque is empty")
         if self.first == self.last:
             removed = self.last
             self.first = None

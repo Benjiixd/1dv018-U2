@@ -37,7 +37,7 @@ def main() -> None:
         print(value)
     dq2 = Deque()
     print("Is dq2 empty?", dq2.isEmpty())
-    dq2.removeFirst()  # should raise an exception
+    #dq2.removeFirst()  # should raise an exception
     
     
 

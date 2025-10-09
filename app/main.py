@@ -1,6 +1,7 @@
 def main() -> None:
     from assignment1 import LinkedList
     from assignment2 import Deque
+    from assignment3 import BST
 
     # assignment 1 test
     print("___Assignment 1 Test___")
@@ -37,9 +38,61 @@ def main() -> None:
         print(value)
     dq2 = Deque()
     print("Is dq2 empty?", dq2.isEmpty())
-    #dq2.removeFirst()  # should raise an exception
+    try:
+        dq2.removeFirst()
+    except IndexError as e:
+        print("Expected exception on removing empty:", e)    
     
-    
+    print("\n___Assignment 3 Test (BST)")
+    bst = BST()
+    for x in [ 5, 3, 7, 2, 4, 6, 8, 9]:
+        bst.add(x)
+
+    print("Initial tree:")
+    print(bst)
+    print("InorderIterator:", list(bst))
+    print("preorder:", list(bst.preorder()))
+    print("postorder:", list(bst.postorder()))
+    print("Size:", bst.size())
+    print("Height:", bst.height())
+    print("Contains 4?", bst.contains(4))
+    print("Contains 11?", bst.contains(11))
+
+    bst.remove(2)
+    print("\nRemoving leaf 2:")
+    print("Inorder:", list(bst))
+    print("preorder:", list(bst.preorder()))
+    print("postorder:", list(bst.postorder()))
+    print("Size:", bst.size(), "Height:", bst.height())
+    print(bst)
+
+    bst.removeKLargest(2)
+    print("\nRemoving leaf 8 (second largest):")
+    print("Inorder:", list(bst))
+    print("preorder:", list(bst.preorder()))
+    print("postorder:", list(bst.postorder()))
+    print(bst)
+
+    bst.remove(7)
+    print("Removing node 7:")
+    print("Inorder:", list(bst))
+    print("preorder:", list(bst.preorder()))
+    print("postorder:", list(bst.postorder()))
+    print("Size:", bst.size(), "Height:", bst.height())
+    print(bst)
+
+    bst.remove(5)
+    print("\nRemoving node 5:")
+    print("Inorder:", list(bst))
+    print("preorder:", list(bst.preorder()))
+    print("postorder:", list(bst.postorder()))
+    print("Size:", bst.size(), "Height:", bst.height())
+    print(bst)
+
+    try:
+        bst.remove(999)
+    except KeyError as e:
+        print("Expected exception on remove(999):", e)
 
 
 

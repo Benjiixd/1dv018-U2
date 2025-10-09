@@ -2,6 +2,7 @@ def main() -> None:
     from assignment1 import LinkedList
     from assignment2 import Deque
     from assignment3 import BST
+    from assignment4 import HashTable
 
     # assignment 1 test
     print("___Assignment 1 Test___")
@@ -93,6 +94,23 @@ def main() -> None:
         bst.remove(999)
     except KeyError as e:
         print("Expected exception on remove(999):", e)
+
+    print("\n___Assignment 4 Test (HashTable)___")
+    ht = HashTable()
+    ht.put("apple", 10)
+    ht.put("banana", 20)
+    ht.put("orange", 30)
+    ht.put("apple1", "one")
+    ht.put("banana2", "two")
+    ht.put("orange3", "three")
+    print("Get apple:", ht.get("apple"))
+    print("Get banana:", ht.get("banana"))
+    print("Get orange:", ht.get("orange"))
+    print("Get apple1:", ht.get("apple1"))
+    print("Get banana2:", ht.get("banana2"))
+    print("Get orange3:", ht.get("orange3"))
+    ht.display()
+
 
 
 

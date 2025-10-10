@@ -1,6 +1,11 @@
 # 1dv018-U2
 
+## How to run:
+    cd /app
+    kör main.py
+
 ## assignment 1:
+
 Fördelar med linked list över arraylist:
 Bättre tidskomplexitet för insättning och borttagning av element, O(1) kontra O(n)
 Dynamisk storlek, minnet används mer effektivt beroende på antalet element

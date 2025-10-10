@@ -14,7 +14,6 @@ class Veichle:
     def __repr__(self):
         return f"Veichle({self.regnr}, {self.brand} {self.name}, {self.mileage} km)"
 
-    # i dont understand why this is needed, im not gonna use it since it messes with the hashtable
     def hashCode(self, capacity):
         hv = 0
         for ch in self.regnr:

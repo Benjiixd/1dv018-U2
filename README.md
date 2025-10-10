@@ -3,7 +3,7 @@
 ## How to run:
     python3 app/main.py
 
-
+    Koden kommer att printa massa grejer uppdelat i olika sektioner där den kör exempel på de olika uppgifterna
 ## Notes:
     jag förstår inte helt varför jag skulle ha en egen hash funktion i assignment 5, men jag implemterade det så att den
     använder sitt egna registreringsnummer som hash, men det hade lika gärna funkat att använda sig utan det eftersom jag
@@ -33,6 +33,7 @@ Capacity=64: 139 collisions of 200 objects
 Capacity=128: 98 collisions of 200 objects
 Capacity=256: 62 collisions of 200 objects
 
+Kollisionerna mäts genom att kolla hur många utav objekten hamnar i samma bucket, alltså har till exempel en bucket med 8 objekt ett kollisionsvärde av 7, och om 8 sådana buckets alla har 8 objekt får vi ett kollisions värde på 8*7 = 56
 så man kan se att min hashfunktion fungerar väl med mindre tabeller, såsom 20 objekt, men när objekten ökar så ökar även kollisionerna, detta är såklart förväntat, har man bara 8 hinkar så kommer man inte kunna få plats med 200 objekt.
 Eftersom jag däremot la till en funktion där jag kan ge ett kapacitetvärde (skapa mer hinkar), så kan jag beroende på datamängden
 öka antalet hinkar, och på så sätt minska antalet kollisioner, även om jag över 200 objekt har 139 kollisioner med 64 buckets, så behöver detta inte vara något negativt, eftersom det är få kollisioner per bucket, vilket leder till en bra tidskomplexitet (närmare O(1) vid find), till skillnad från 200 objekt med 8 buckets, där varje bucket troligtvis innehåller ungefär 25 objekt, alltså måste

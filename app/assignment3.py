@@ -188,5 +188,9 @@ class BST:
         return "\n".join(lines)  
                
     def removeKLargest(self, k):
+        if k <= 0 or k > self.size():
+            raise ValueError("k is out of bounds")
+        if self.isEmpty():
+            raise IndexError("Tree is empty")
         values = list(self)
         self.remove(values[-k])

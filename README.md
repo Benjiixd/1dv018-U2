@@ -1,8 +1,7 @@
 # 1dv018-U2
 
 ## How to run:
-    cd /app
-    kör main.py
+    python3 app/main.py
 
 ## assignment 1:
 

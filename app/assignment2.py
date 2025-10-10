@@ -54,17 +54,17 @@ class Deque:
             self.last = None
             removed.next = None # to help garbage collection
             removed.prev = None
-            return removed
+            return removed.data
         else:
             removed = self.first
             self.first = self.first.next
             self.first.prev = None
             removed.next = None
             removed.prev = None # to help garbage collection
-            return removed
+            return removed.data
         
     
-    def removeLast(self) -> None:
+    def removeLast(self):
         if self.isEmpty():
             raise IndexError("deque is empty")
         if self.first == self.last:
@@ -73,14 +73,14 @@ class Deque:
             self.last = None
             removed.next = None # to help garbage collection
             removed.prev = None
-            return removed
+            return removed.data
         else:
             removed = self.last
             self.last = self.last.prev
             self.last.next = None
             removed.next = None # to help garbage collection
             removed.prev = None
-            return removed
+            return removed.data
     
     def size(self) -> int:
         count = 0

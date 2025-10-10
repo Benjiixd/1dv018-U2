@@ -192,5 +192,7 @@ class BST:
             raise ValueError("k is out of bounds")
         if self.isEmpty():
             raise IndexError("Tree is empty")
+        if k is None:
+            raise ValueError("k cannot be None")
         values = list(self)
         self.remove(values[-k])

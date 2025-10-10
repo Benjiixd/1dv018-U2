@@ -8,12 +8,15 @@ class HashTable:
     
     def _hash(self, key) -> int:
         hv = 0
-        for char in str(type(key)) + str(key):
-            hv = (hv * 31 + ord(char)) % self.capacity
+        for ch in str(key):
+            hv = (hv * 31 + ord(ch)) % self.capacity
         return hv
-    
+
     def put(self, key, value) -> None:
-        idx = self._hash(key)
+        if hasattr(value, "hashCode"):
+            idx = value.hashCode(self.capacity)
+        else:
+            idx = self._hash(key)
         bucket = self.table[idx]
         current = bucket.head
         while current:

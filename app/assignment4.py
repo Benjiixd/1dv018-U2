@@ -50,4 +50,13 @@ class HashTable:
         for i, bucket in enumerate(self.table):
             print(f"Bucket {i}: ", end="")
             bucket.display()
-            print("None")
+
+    def collision_count(self):
+        collisions = 0
+        for bucket in self.table:
+            current = bucket.head
+            if current and current.next:
+                while current.next:
+                    collisions += 1
+                    current = current.next
+        return collisions

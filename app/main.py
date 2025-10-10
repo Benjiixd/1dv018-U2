@@ -180,7 +180,7 @@ def assignment5test():
         ht2.put(temp.regnr, temp)
     print(f"Number of collisions: {ht2.collision_count()} of {ht2._n} objects (capacity={ht2.capacity})")
 
-    for cap in [8, 16, 32, 64]:
+    for cap in [8, 16, 32, 64, 128, 256]:
         ht3 = HashTable(capacity=cap)
         for _ in range(200):
             car = createRandomCar()
